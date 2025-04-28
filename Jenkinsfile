@@ -7,7 +7,7 @@ pipeline {
         stage('Clone') {
             steps {
                 // Используем креденшал для клонирования репозитория
-                git url: 'https://github.com/pestovG/system-design-primer.git', branch: 'master', credentialsId: '504132'
+                git url: 'https://github.com/pestovG/system-design-primer', branch: 'master', credentialsId: '504132'
             }
         }
         stage('Install dependencies') {
