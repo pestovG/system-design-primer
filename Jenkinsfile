@@ -7,14 +7,14 @@ pipeline {
         stage('Clone') {
             steps {
                 // Используем креденшал для клонирования репозитория
-                git credentialsId: '504132', branch: 'master', url: 'https://github.com/pestovG/system-design-primer.git'
+                git url: 'https://github.com/pestovG/system-design-primer.git', branch: 'master', credentialsId: '504132'
             }
         }
         stage('Install dependencies') {
             steps {
                 sh 'apt-get update'
                 sh 'apt-get install -y python3-pip'
-                sh 'pip3 install -r requirements.txt || true'  //
+                sh 'pip3 install -r requirements.txt || true'
             }
         }
         stage('Test') {
